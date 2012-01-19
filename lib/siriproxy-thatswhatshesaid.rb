@@ -8,8 +8,13 @@ class SiriProxy::Plugin::ThatsWhatSheSaid < SiriProxy::Plugin
     #if you have custom configuration options, process them here!
   end
 
-  listen_for /iphone/i do
+  listen_for /iPhone/i do
   response = say "An iPhone Blog"
+  request_completed
+  end
+  
+  listen_for /joke/i do
+  response = say "It works"
   request_completed
   end
   
